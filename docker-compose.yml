@@ -29,16 +29,16 @@ services:
       # Option 1: set the MODEL to the device model number (i.e. RAK7371)
       # Option 2: set the MODEL to the concentrator model number (i.e. RAK5146)
       # Option 2: set the MODEL to the concentrator chip (i.e. SX1303)
-      MODEL: "RAK7271"
+      MODEL: "RAK2287"
       #MODEL: "RAK5146"
       #MODEL: "SX1303"
 
       # When using options 2 or 3 above, you will probably have to specify other features of the module.
       # These are the defaults:
-      #INTERFACE: "ANY"
-      #HAS_GPS: "1"
+      INTERFACE: "SPI"
+      HAS_GPS: "1"
       #HAS_LTE: "0"
-      #RESET_GPIO: 17
+      RESET_GPIO: 5
       #POWER_EN_GPIO: 0
       #POWER_EN_LOGIC: 0
 
@@ -49,13 +49,13 @@ services:
       # If you have the concentrator connected to a different port
       # than the default ones ("/dev/spidev0.0" for SPI, "/dev/ttyUSB0" or "/dev/ttyACM0" for USB) 
       # you can define it this way
-      #RADIO_DEV: "/dev/spidev0.1"
+      RADIO_DEV: "/dev/spidev1.1"
       #RADIO_DEV: "/dev/ttyACM1"
       #RADIO_DEV: "AUTO"
 
       # Same for the GPS
-      # GPS_DEV: "/dev/i2c-1"
-      #GPS_DEV: "/dev/ttyUSB1"
+      GPS_DEV: "/dev/i2c-3"
+      # GPS_DEV: "/dev/ttyUSB1"
 
       # The service will define the Gateway EUI based on a network interface: eth0, wlan0 or usb0.
       # If neither of these exist or you want it to use a different interface you can define the NIC this way.
@@ -71,18 +71,14 @@ services:
       #TTN_REGION: "au1"
 
       # Or you can set a completely different LNS server.
-      #SERVER_HOST: lns.example.com
-      #SERVER_PORT: 1700
+      SERVER_HOST: nms.delta-telematics.ca
+      SERVER_PORT: 1700
 
       # The default frequency band is EU868, 
       # if your module uses a different band you have to select it here:
-      #BAND: "cn_470_510"
+      BAND: "us_902_928"
 
       # If you want the gateway to report a specific lat/lon/alt you can set them this way:
       #GPS_LATITUDE: 41.42
       #GPS_LONGITUDE: 2.12
       #GPS_ALTITUDE: 0
-
-
-
-
