@@ -7,6 +7,9 @@ services:
     # use pre-defined image
     image: rakwireless/udp-packet-forwarder:latest
 
+    devices:
+      - "/dev/i2c-3:/dev/i2c-3"
+
     # or comment out image: and build it yourself / with balena services
     #build:
     #  context: .
