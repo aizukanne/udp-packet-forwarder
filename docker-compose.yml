@@ -54,8 +54,8 @@ services:
       #RADIO_DEV: "AUTO"
 
       # Same for the GPS
+      # GPS_DEV: "/dev/i2c-3"
       GPS_DEV: "/dev/ttyS5"
-      # GPS_DEV: "/dev/ttyUSB1"
 
       # The service will define the Gateway EUI based on a network interface: eth0, wlan0 or usb0.
       # If neither of these exist or you want it to use a different interface you can define the NIC this way.
